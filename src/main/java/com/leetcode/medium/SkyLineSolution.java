@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.medium;
 
 /**
  * Created by 75623 on 2018/5/6.
