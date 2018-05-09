@@ -2,6 +2,7 @@ package com.leetcode.medium;
 
 /**
  * Created by 75623 on 2018/5/8.
+ * 递归判断节点是否该删除
  */
 public class PruneTreeSolution {
 
