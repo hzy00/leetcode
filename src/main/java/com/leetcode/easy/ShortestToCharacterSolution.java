@@ -13,7 +13,7 @@ public class ShortestToCharacterSolution {
         Assert.assertEquals(3,shortestToChar("loveleetcode",'e')[0]);
     }
 
-    public int[] shortestToChar(String S, char C) {
+    public int[] shortestToChar1(String S, char C) {
         if(S == null || S.length()<1){
             return null;
         }
@@ -31,6 +31,23 @@ public class ShortestToCharacterSolution {
                 }
 
             }
+        }
+        return distances;
+    }
+
+    public int[] shortestToChar(String S, char C) {
+        if(S == null || S.length()<1){
+            return null;
+        }
+        int[] distances = new int[S.length()];
+        int pre = Integer.MAX_VALUE/2;
+        for(int i=0;i<S.length();i++){
+            if(S.charAt(i) == C)pre = i;
+            distances[i] = i-pre;
+        }
+        for(int i=S.length()-1;i>-1;i--){
+            if(S.charAt(i) == C)pre = i;
+            distances[i] = Math.min(Math.abs(i-pre),Math.abs(distances[i]));
         }
         return distances;
     }
