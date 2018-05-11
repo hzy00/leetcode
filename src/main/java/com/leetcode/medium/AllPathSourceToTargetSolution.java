@@ -55,13 +55,15 @@ public class AllPathSourceToTargetSolution {
     private List<List<Integer>> dfs(int[][] graph,int node){
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(node == graph.length -1){
-            result.add(new ArrayList<Integer>());
+            List<Integer> list = new ArrayList<Integer>();
+            list.add(node);
+            result.add(list);
             return result;
         }
         for(int i:graph[node]){
             List<List<Integer>> subPath = dfs(graph,i);
             for(List<Integer> path:subPath){
-                path.add(0,i);
+                path.add(0,node);
                 printArray(path);
                 result.add(path);
             }
